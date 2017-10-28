@@ -65,15 +65,29 @@ var Game = {
 		$("#directions").text(directions);
 		$("#combat").css("opacity", 0.5);
 		$("#controls").css("opacity", 0.5);
+		$("#hp").css("opacity", 0.5);
 
 		//Create fighter portraits
 		for(var i = 0; i < Game.combatants.length; i++){
-			console.log("Im running " + Game.combatants[i]);
 			var fighter = $("<div>");
 			fighter.addClass("fighter");
 			fighter.attr("id", Game.combatants[i]);
 			fighter.text(Game.combatants[i]);
 			$("#fighters").append(fighter);
+		};
+
+		//Health bars
+		var atkrHp = $("<div>");
+		atkrHp.addClass("health atkHP");
+		$("#hp").append(atkrHp);
+		var spacer = $("<div>");
+		spacer.addClass("health space");
+		$("#hp").append(spacer);
+		var defHp;
+		for(var i = 1; i < 4; i++){
+			defHp = $("<div>");
+			defHp.addClass("health defHP"+i);
+			$("#hp").append(defHp);
 		};
 
 		//Create combat line-up

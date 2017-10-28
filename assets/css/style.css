@@ -1,5 +1,6 @@
 #directions {
 	background-color: orange;
+	margin: 15px 0px 15px 0px;
 }
 
 #fighters {
@@ -10,7 +11,11 @@
 #combat {
 	background-color: red;
 	margin: 15px 0px 0px 0px;
-	padding: 10px 0px 10px 0px;
+	padding: 10px 0px 2px 0px;
+}
+
+#hp {
+	background-color:red;
 }
 
 #controls {
@@ -70,6 +75,18 @@
 .vs {
 	background: url("../images/Vs.png") center no-repeat;
 	background-size: 100% 100%;
+	border: none;
+}
+
+.health {
+	display: inline-block;
+	margin: 0px 10px 0px 10px;
+	width: 200px;
+	height: 1em;
+	border: 4px solid black;
+}
+
+.space {
 	border: none;
 }
 
