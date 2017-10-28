@@ -1,59 +1,82 @@
+body {
+	background: url("../images/colors2.jpg");
+	background-size: 100%;
+}
+
+#title {
+	font-family: 'Barrio', cursive;
+	font-size: 75px;
+	background-color: black;
+	margin: 0px;
+	padding: 20px;
+}
+
 #directions {
+	font-family: 'Schoolbell', sans-serif;
+	font-size: 24px;
 	background-color: orange;
-	margin: 15px 0px 15px 0px;
+	padding: 15px 10px 15px 10px;
 }
 
 #fighters {
-	background-color: white;
-	margin: 15px 0px 15px 0px;
+	font-family: 'Schoolbell', sans-serif;
+	font-size: 20px;
+	height: 240px;
+	background: linear-gradient(orange, #A02422);
+	padding: 15px 0px 15px 0px;
 }
 
 #combat {
-	background-color: red;
-	margin: 15px 0px 0px 0px;
-	padding: 10px 0px 2px 0px;
+	background-color: #A02422;
+	padding: 15px 0px 15px 0px;
 }
 
 #hp {
-	background-color:red;
+	background-color: #A02422;
 }
 
 #controls {
-	background-color: green;
+	background-color: black;
+	padding: 10px;
 }
 
 #bulbasaur {
 	background: url("../images/bulbasaur.png") center no-repeat;
-	background-size: 100% 100%;
+	background-size: 200px 200px;
 	border-color: green;
 }
 
 #charmander {
 	background: url("../images/charmander.png") center no-repeat;
-	background-size: 100% 100%;
+	background-size: 200px 200px;
 	border-color: red;
 }
 
 #squirtle {
 	background: url("../images/squirtle.png") center no-repeat;
-	background-size: 100% 100%;
+	background-size: 200px 200px;
 	border-color: blue;
 }
 
 #pikachu {
 	background: url("../images/pikachu.png") center no-repeat;
-	background-size: 100% 100%;
+	background-size: 200px 200px;
 	border-color: yellow;
+}
+
+.container {
+	background-color: black;
+	padding: 5px;
 }
 
 .fighter {
 	display: inline-block;
-	background-color: white;
+	background-color: red;
 	font-size: 20px;
 	font-weight: bold;
-	font-family: serif;
+	font-family: 'Schoolbell', sans-serif;
 	text-align: center;
-	margin: 0px 0px 0px 0px;
+	margin: 0px 10px 0px 10px;
 	width: 200px;
 	height: 200px;
 	border: 4px solid;
@@ -66,6 +89,7 @@
 	font-weight: bold;
 	font-family: serif;
 	text-align: center;
+
 	margin: 0px 10px 0px 10px;
 	width: 200px;
 	height: 200px;
@@ -88,7 +112,7 @@
 }
 
 .prcntBar {
-	background-color: green;
+	background-color: #32CD32;
 	height: 100%;
 	border: none;
 }
