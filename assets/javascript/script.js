@@ -22,38 +22,46 @@ function Fighter([name, hp, totHp, atkPwr, baseAtk, cntrPwr]){
 
 //Combat object - all functions pertaining to attack, counter attack and HP
 var Combat = {
+	atkText: "",
+	cntrText: "",
+	winText: "",
 
 	attack: function(atk, def) {
 		def.hp -= atk.atkPwr;
 
-		console.log(atk.name + " attacked " + def.name + " for " + atk.atkPwr + " damage.");
+		Combat.atkText = atk.name + " attacked " + def.name + " for " + atk.atkPwr + " damage.";
 		atk.atkPwr += atk.baseAtk;
 	},
 
 	counter: function(atk, def) {
 		atk.hp -= def.cntrPwr;
-		console.log(def.name + " counter attacked for " + def.cntrPwr + " damage.");
+		Combat.cntrText = def.name + " counter attacked for " + def.cntrPwr + " damage.";
 	},
 
 	fight: function(atk, def) {
+		Combat.winText = "";
+		Combat.cntrText = "";
 		Combat.attack(atk, def);
-		console.log(def.name + " has " + def.hp  + " hp left.");
+		$("#"+def.name.toLowerCase()).text(def.hp  + " HP");
 		if(def.hp > 0){
 			Combat.counter(atk, def);
-		}
-		else if(atk.hp <= 0){
-			console.log("You have been defeated.")
+			if(atk.hp <= 0){
+				Combat.winText = "You have been defeated.";
+				$("#fighters").text(Combat.atkText + "\n" + Combat.cntrText + "\n" + Combat.winText);
+				return;
+			}
 		}
 		else {
-			console.log(atk.name + " Wins!")
+			Combat.winText = atk.name + " Wins!";
 		}
-		console.log(atk.name + " has " + atk.hp + " hp left.");
-		console.log("-------------------------------------------");
+		$("#"+atk.name.toLowerCase()).text(atk.hp  + " HP");
+		$("#fighters").text(Combat.atkText + "\n" + Combat.cntrText + "\n" + Combat.winText);
 	},
 
 	battle: function(atk, def1, def2, def3) {
-		Game.directions = "Now it's time to attack! Click the attack button until you defeat all your opponents or succomb to their might!";
+		Game.directions = "Now it's time to attack! Click the attack button until you defeat all your opponents or succumb to their might!";
 		$("#directions").text(Game.directions);
+		$(".vs").text("Fight!");
 		if(atk.hp > 0){
 			$("#atkBtn").on("click", function () {
 				if(def1.hp > 0) {
@@ -71,10 +79,13 @@ var Combat = {
 					$(".atkHPbar").css("width", Math.floor((atk.hp/atk.totHp)*100)+"%");
 					$(".defHPbar3").css("width", Math.floor((def3.hp/def3.totHp)*100)+"%");
 				}
+
+				if(atk.hp < 0) {
+					$("#atkBtn").css("opacity", 0.5);
+					$("#atkBtn").off();
+					return;
+				}
 			});
-		}
-		else {
-			$("#atkBtn").css("opacity", 0.5);
 		}
 	}
 
