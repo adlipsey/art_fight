@@ -47,7 +47,7 @@ var Combat = {
 			Combat.counter(atk, def);
 			if(atk.hp <= 0){
 				Combat.winText = "You have been defeated.";
-				$("#fighters").text(Combat.atkText + "\n" + Combat.cntrText + "\n" + Combat.winText);
+				$("#fighters").html("<p>"+Combat.atkText +"</p><p>"+Combat.cntrText+"</p><p>"+Combat.winText+"</p>");
 				return;
 			}
 		}
@@ -55,7 +55,7 @@ var Combat = {
 			Combat.winText = atk.name + " Wins!";
 		}
 		$("#"+atk.name.toLowerCase()).text(atk.hp  + " HP");
-		$("#fighters").text(Combat.atkText + "\n" + Combat.cntrText + "\n" + Combat.winText);
+		$("#fighters").html("<p>"+Combat.atkText +"</p><p>"+Combat.cntrText+"</p><p>"+Combat.winText+"</p>");
 	},
 
 	battle: function(atk, def1, def2, def3) {
@@ -219,25 +219,29 @@ var Game = {
 	newGame: function(){
 		Game.drawBoard();
 		Game.pickAtkr();
+
 	}
 }
 
 
 $(document).ready(function() {
 
-var chrm = ["Charmander", 200, 200, 50, 50, 60];
-var sqrt = ["Squirtle", 270, 270, 35, 35, 50];
-var bulb = ["Bulbasaur", 350, 350, 20, 20, 40];
-var pika = ["Pikachu", 250, 250, 40, 40, 80];
+	var chrm = ["Charmander", 200, 200, 50, 50, 60];
+	var sqrt = ["Squirtle", 270, 270, 35, 35, 50];
+	var bulb = ["Bulbasaur", 350, 350, 20, 20, 40];
+	var pika = ["Pikachu", 250, 250, 40, 40, 80];
 
-charmander = new Fighter(chrm);
-squirtle = new Fighter(sqrt);
-bulbasaur = new Fighter(bulb);
-pikachu = new Fighter(pika);
+	charmander = new Fighter(chrm);
+	squirtle = new Fighter(sqrt);
+	bulbasaur = new Fighter(bulb);
+	pikachu = new Fighter(pika);
 
-objects = [bulbasaur, charmander, squirtle, pikachu];
+	objects = [bulbasaur, charmander, squirtle, pikachu];
 
-Game.newGame();	
+	Game.newGame();
 
+	$("#rstBtn").on("click", function() {
+		window.location.reload();
+	});
 
 });
