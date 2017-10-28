@@ -53,7 +53,7 @@
 	font-weight: bold;
 	font-family: serif;
 	text-align: center;
-	margin: 0px 10px 0px 10px;
+	margin: 0px 0px 0px 0px;
 	width: 200px;
 	height: 200px;
 	border: 4px solid;
@@ -69,13 +69,14 @@
 	margin: 0px 10px 0px 10px;
 	width: 200px;
 	height: 200px;
-	border: 4px solid;
+	border: none;
 }
 
 .vs {
 	background: url("../images/Vs.png") center no-repeat;
 	background-size: 100% 100%;
 	border: none;
+	color: white;
 }
 
 .health {
@@ -84,6 +85,28 @@
 	width: 200px;
 	height: 1em;
 	border: 4px solid black;
+}
+
+.prcntBar {
+	background-color: green;
+	height: 100%;
+	border: none;
+}
+
+.atkHPBar {
+	width:100%;
+}
+
+.defHPBar1 {
+	width: 100%;
+}
+
+.defHPBar2 {
+	width: 100%;
+}
+
+.defHPBar3 {
+	width: 100%;
 }
 
 .space {
