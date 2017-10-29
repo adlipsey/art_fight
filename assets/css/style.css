@@ -42,31 +42,28 @@ body {
 
 #bulbasaur {
 	background: url("../images/bulbasaur.png") center no-repeat;
-	background-size: 200px 200px;
 	border-color: green;
 }
 
 #charmander {
 	background: url("../images/charmander.png") center no-repeat;
-	background-size: 200px 200px;
 	border-color: red;
 }
 
 #squirtle {
 	background: url("../images/squirtle.png") center no-repeat;
-	background-size: 200px 200px;
 	border-color: blue;
 }
 
 #pikachu {
 	background: url("../images/pikachu.png") center no-repeat;
-	background-size: 200px 200px;
 	border-color: yellow;
 }
 
 .container {
 	background-color: black;
 	padding: 5px;
+	margin-top: 20px;
 }
 
 .fighter {
@@ -77,8 +74,8 @@ body {
 	font-family: 'Schoolbell', sans-serif;
 	text-align: center;
 	margin: 0px 10px 0px 10px;
-	width: 200px;
 	height: 200px;
+	width: 200px;
 	border: 4px solid;
 }
 
@@ -89,10 +86,10 @@ body {
 	font-weight: bold;
 	font-family: 'Schoolbell', sans-serif;
 	text-align: center;
-
-	margin: 0px 10px 0px 10px;
-	width: 200px;
 	height: 200px;
+	width: 200px;
+	margin: 0px 10px 0px 10px;
+
 	border: none;
 }
 
