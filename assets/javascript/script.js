@@ -58,6 +58,7 @@ var Combat = {
 			Combat.counter(atk, def);
 			//If attacker HP is brought below 0 by counter, they lose, game exits logic flow
 			if(atk.hp <= 0){
+				$("#"+atk.name.toLowerCase()).text(atk.hp  + " HP");
 				Combat.winText = "You have been defeated.";
 				$("#"+atk.name.toLowerCase()).css("background","url(\"./assets/images/skull.png\") center no-repeat");
 				$("#"+atk.name.toLowerCase()).css("background-size","cover");
@@ -76,10 +77,16 @@ var Combat = {
 			$("#"+def.name.toLowerCase()).css("background-size","cover");
 			//Fades out over 2 sec
 			$("#"+def.name.toLowerCase()).animate({opacity: 0.5}, 2000);
+			//Win Condition: Checks if all defenders have been defeated
 			if((defGlobal1.hp <= 0) && (defGlobal2.hp <= 0) && (defGlobal3.hp <= 0)){
+				//Display win message
 				Game.directions = "Congratulations!!!! You won!!!!"
 				$("#directions").text(Game.directions);
+				//Changes character portrait to silly gif of corresponding file name
 				$("#"+atk.name.toLowerCase()).css("background","url(\"./assets/images/"+atk.name.toLowerCase()+".gif\") center no-repeat");
+				//Fades out attack button and removes onclick functionality
+				$("#atkBtn").css("opacity", 0.5);
+				$("#atkBtn").off();
 			}
 		}
 		//Assigns the attacker's HP value to the text on their portrait div in place of their name
@@ -89,7 +96,7 @@ var Combat = {
 	},
 
 	battle: function(atk, def1, def2, def3) {
-		Game.directions = "Now it's time to attack! Click the attack button until you defeat all your opponents or succumb to their might!";
+		Game.directions = "Now it's time to attack! Click the attack button until you defeat all your opponents. May the best drawing win!";
 		$("#directions").text(Game.directions);
 		$(".vs").text("Fight!");
 		//If the attacker is not dead...
@@ -100,22 +107,22 @@ var Combat = {
 				if(def1.hp > 0) {
 					Combat.fight(atk, def1);
 					//Adjusts width of HP bars based on % of health remaining
-					$(".atkHPbar").css("width", Math.floor((atk.hp/atk.totHp)*100)+"%");
-					$(".defHPbar1").css("width", Math.floor((def1.hp/def1.totHp)*100)+"%");
+					$(".atkHPbar").animate({width: Math.floor((atk.hp/atk.totHp)*100)+"%"}, 1000);
+					$(".defHPbar1").animate({width: Math.floor((def1.hp/def1.totHp)*100)+"%"}, 1000);
 				}
 				//... a fight between atk and def2 if def2 isn't dead
 				else if(def2.hp > 0){
 					Combat.fight(atk, def2);
 					//Adjusts width of HP bars based on % of health remaining
-					$(".atkHPbar").css("width", Math.floor((atk.hp/atk.totHp)*100)+"%");
-					$(".defHPbar2").css("width", Math.floor((def2.hp/def2.totHp)*100)+"%");
+					$(".atkHPbar").animate({width: Math.floor((atk.hp/atk.totHp)*100)+"%"}, 1000);
+					$(".defHPbar2").animate({width: Math.floor((def2.hp/def2.totHp)*100)+"%"}, 1000);
 				}
 				//... a fight between atk and def3 if def3 isn't dead
 				else {
 					Combat.fight(atk, def3);
 					//Adjusts width of HP bars based on % of health remaining
-					$(".atkHPbar").css("width", Math.floor((atk.hp/atk.totHp)*100)+"%");
-					$(".defHPbar3").css("width", Math.floor((def3.hp/def3.totHp)*100)+"%");
+					$(".atkHPbar").animate({width: Math.floor((atk.hp/atk.totHp)*100)+"%"}, 1000);
+					$(".defHPbar3").animate({width: Math.floor((def3.hp/def3.totHp)*100)+"%"}, 1000);
 				}
 				//If at any time attacker HP is less than or equal to 0, fades out button, removes button functionality, exits game flow
 				if(atk.hp <= 0) {
@@ -301,7 +308,7 @@ $(document).ready(function() {
 	var chrm = ["Charmander", 200, 200, 50, 50, 60];
 	var sqrt = ["Squirtle", 270, 270, 35, 35, 50];
 	var bulb = ["Bulbasaur", 350, 350, 20, 20, 40];
-	var pika = ["Pikachu", 250, 250, 37, 37, 80];
+	var pika = ["Pikachu", 230, 230, 37, 37, 80];
 	//Object instances made from above arrays
 	charmander = new Fighter(chrm);
 	squirtle = new Fighter(sqrt);

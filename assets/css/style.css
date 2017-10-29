@@ -1,6 +1,6 @@
 body {
-	background: url("../images/colors2.jpg");
-	background-size: 100%;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url("../images/colors2.jpg");
+	background-size: cover;
 }
 
 #title {
@@ -21,7 +21,7 @@ body {
 #fighters {
 	font-family: 'Schoolbell', sans-serif;
 	font-size: 20px;
-	height: 240px;
+	min-height: 240px;
 	background: linear-gradient(orange, #A02422);
 	padding: 15px 0px 15px 0px;
 }
@@ -89,7 +89,6 @@ body {
 	height: 200px;
 	width: 200px;
 	margin: 0px 10px 0px 10px;
-
 	border: none;
 }
 
@@ -136,7 +135,7 @@ body {
 
 .cntrls {
 	margin-left: 50px;
-	margin-right: 200px;
+	margin-right: 50px;
 	width: 100px;
 	height: 75px:;
 }
