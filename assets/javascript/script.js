@@ -107,22 +107,22 @@ var Combat = {
 				if(def1.hp > 0) {
 					Combat.fight(atk, def1);
 					//Adjusts width of HP bars based on % of health remaining
-					$(".atkHPbar").animate({width: Math.floor((atk.hp/atk.totHp)*100)+"%"}, 1000);
-					$(".defHPbar1").animate({width: Math.floor((def1.hp/def1.totHp)*100)+"%"}, 1000);
+					$(".atkHPbar").animate({width: Math.floor((atk.hp/atk.totHp)*100)+"%"}, 500);
+					$(".defHPbar1").animate({width: Math.floor((def1.hp/def1.totHp)*100)+"%"}, 500);
 				}
 				//... a fight between atk and def2 if def2 isn't dead
 				else if(def2.hp > 0){
 					Combat.fight(atk, def2);
 					//Adjusts width of HP bars based on % of health remaining
-					$(".atkHPbar").animate({width: Math.floor((atk.hp/atk.totHp)*100)+"%"}, 1000);
-					$(".defHPbar2").animate({width: Math.floor((def2.hp/def2.totHp)*100)+"%"}, 1000);
+					$(".atkHPbar").animate({width: Math.floor((atk.hp/atk.totHp)*100)+"%"}, 500);
+					$(".defHPbar2").animate({width: Math.floor((def2.hp/def2.totHp)*100)+"%"}, 500);
 				}
 				//... a fight between atk and def3 if def3 isn't dead
 				else {
 					Combat.fight(atk, def3);
 					//Adjusts width of HP bars based on % of health remaining
-					$(".atkHPbar").animate({width: Math.floor((atk.hp/atk.totHp)*100)+"%"}, 1000);
-					$(".defHPbar3").animate({width: Math.floor((def3.hp/def3.totHp)*100)+"%"}, 1000);
+					$(".atkHPbar").animate({width: Math.floor((atk.hp/atk.totHp)*100)+"%"}, 500);
+					$(".defHPbar3").animate({width: Math.floor((def3.hp/def3.totHp)*100)+"%"}, 500);
 				}
 				//If at any time attacker HP is less than or equal to 0, fades out button, removes button functionality, exits game flow
 				if(atk.hp <= 0) {
