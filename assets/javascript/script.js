@@ -62,7 +62,7 @@ var Combat = {
 				Combat.winText = "You have been defeated.";
 				$("#"+atk.name.toLowerCase()).css("background","url(\"./assets/images/skull.png\") center no-repeat");
 				$("#"+atk.name.toLowerCase()).css("background-size","cover");
-				//Fades out over 2 sec
+				//Portrait fades out over 2 sec
 				$("#"+atk.name.toLowerCase()).animate({opacity: 0.5}, 2000);
 				$("#fighters").html("<p>"+Combat.atkText +"</p><p>"+Combat.cntrText+"</p><p>"+Combat.winText+"</p>");
 				return;
@@ -306,8 +306,8 @@ var Game = {
 $(document).ready(function() {
 	//Arrays holding fighter stats
 	var chrm = ["Charmander", 200, 200, 50, 50, 60];
-	var sqrt = ["Squirtle", 270, 270, 35, 35, 50];
-	var bulb = ["Bulbasaur", 350, 350, 20, 20, 40];
+	var sqrt = ["Squirtle", 240, 270, 35, 35, 52];
+	var bulb = ["Bulbasaur", 360, 350, 20, 25, 40];
 	var pika = ["Pikachu", 230, 230, 37, 37, 80];
 	//Object instances made from above arrays
 	charmander = new Fighter(chrm);
