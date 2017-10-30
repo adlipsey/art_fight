@@ -136,6 +136,8 @@ var Combat = {
 
 }
 
+
+
 //Game object - all functions pertaining to game creation and flow
 var Game = {
 	directions: "",
@@ -218,7 +220,7 @@ var Game = {
 		$("#controls").append(rstBtn);
 	},
 
-	//Picks the attacking character
+	//Picks the attacking character, calls pickDef1
 	pickAtkr: function(){
 		//Print directions to screen
 		directions = "Select which fighter you would like as your character.";
@@ -235,7 +237,7 @@ var Game = {
 		});
 	},
 
-	//Picks defender #1
+	//Picks defender #1, calls pickDef2
 	pickDef1: function(){
 		//Print directions to screen
 		directions = "Select the first defender. The order may mean life or death!";
@@ -254,7 +256,7 @@ var Game = {
 		});
 	},
 
-	//Picks defender #2
+	//Picks defender #2, calls pickDef3
 	pickDef2: function(){
 		//Print directions to screen
 		directions = "Select the second defender. The order may mean life or death!";
@@ -273,7 +275,7 @@ var Game = {
 		});
 	},
 
-	//Picks defender #3
+	//Picks defender #3, calls Combat.battle with all assigned combatants
 	pickDef3: function(){
 		//Print directions to screen
 		directions = "Select the last defender. The order may mean life or death!";
@@ -303,11 +305,13 @@ var Game = {
 }
 
 
+
+
 $(document).ready(function() {
 	//Arrays holding fighter stats
-	var chrm = ["Charmander", 200, 200, 50, 50, 60];
-	var sqrt = ["Squirtle", 240, 270, 35, 35, 52];
-	var bulb = ["Bulbasaur", 360, 350, 20, 25, 40];
+	var chrm = ["Charmander", 200, 200, 50, 50, 65];
+	var sqrt = ["Squirtle", 240, 240, 35, 35, 52];
+	var bulb = ["Bulbasaur", 335, 335, 22, 22, 47];
 	var pika = ["Pikachu", 230, 230, 37, 37, 80];
 	//Object instances made from above arrays
 	charmander = new Fighter(chrm);
